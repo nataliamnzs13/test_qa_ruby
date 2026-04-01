@@ -1,4 +1,27 @@
-/.bundle/
-/vendor/bundle/
-.rspec
-.env
+# ========================
+# Ruby / Bundler
+# ========================
+/.bundle/          # configuración local de bundler (rutas, versiones)
+/vendor/bundle/    # gemas instaladas localmente (bundle install --path)
+Gemfile.lock       # puedes incluirlo si quieres reproducibilidad exacta
+
+# ========================
+# RSpec
+# ========================
+.rspec             # opciones locales de rspec (no siempre se comparte)
+
+# ========================
+# Variables de entorno
+# ========================
+.env               # credenciales y configuración sensible — NUNCA subir
+
+# ========================
+# Node / Playwright
+# ========================
+node_modules/      # dependencias de npm — se regeneran con: npm install
+package-lock.json  # lockfile de npm (opcional, depende del equipo)
+
+# ========================
+# Sistema operativo
+# ========================
+.DS_Store          # archivos ocultos de macOS
