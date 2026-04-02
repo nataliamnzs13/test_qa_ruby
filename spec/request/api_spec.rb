@@ -13,6 +13,10 @@ RSpec.describe "API Tests - CRUD" do
 
             # verificar el codigo de la respuesta y el formato de los datos
             expect(response.code).to eq(200)
+
+            # validar la extructura de los datos -> cada post debe tener id, title, body y userId
+            expect(response.parsed_response).to all(include("id", "title", "body", "userId"))
+            # validar el contrato (Tipos)
             expect(response.parsed_response).to be_an(Array)
 
             puts "Number of posts: #{response.parsed_response.size}"
@@ -30,6 +34,8 @@ RSpec.describe "API Tests - CRUD" do
 
                 expect(response.code).to eq(200)
                 expect(response.parsed_response["id"]).to eq(id)
+                expect(response.parsed_response["userId"]).to be_a(Integer)
+                expect(response.parsed_response["title"]).to be_a(String)
 
                 puts "Created post #{json_response(response)}" # usando el helper para imprimir el JSON formateado
             end

@@ -40,9 +40,10 @@ end
 ## Selectores user-facing:
 
 # get_by_role(role, options = {}) - para seleccionar elementos por su rol (ej: button, link, heading)
+# get_by_test_id(test_id) - para seleccionar elementos con un atributo data-testid específico
 # get_by_text(text, options = {}) - para seleccionar elementos que contienen cierto texto
 # get_by_label(label, options = {}) - para campos de formulario con etiqueta <label>
-# get_by_placeholder(placeholder, options = {}) - para campos de formulario con placeholder
+
 
 # 2. Selectores Clásicos (CSS y XPath)
 
